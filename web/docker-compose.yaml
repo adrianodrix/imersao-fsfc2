@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  imersao-fsfc2-web:
+    build: .
+    entrypoint: ./.docker/entrypoint.sh
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/home/node/app
