@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: adrianodrix/imersaofsfc2-api:latest
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: api-volume
+              mountPath: /home/node/app/.env
+              subPath: .env
+      volumes:
+        - name: api-volume
+          configMap:
+            name: api-conf
+            items:
+              - key: env
+                path: .env
