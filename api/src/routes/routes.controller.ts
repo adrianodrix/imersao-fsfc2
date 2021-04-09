@@ -69,7 +69,10 @@ export class RoutesController implements OnModuleInit {
         position: [number, number], 
         finished: boolean 
       }
-    }) {
-    this.routeGateway.sendPosition(message.value);
+    }) {    
+    this.routeGateway.sendPosition({
+      ...message.value,
+      position: [message.value.position[1], message.value.position[0]],
+    });
   }
 }

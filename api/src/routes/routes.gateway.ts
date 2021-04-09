@@ -37,7 +37,8 @@ export class RoutesGateway {
   sendPosition(data: { 
     clientId: string; 
     routeId: string;
-    finished: boolean
+    finished: boolean;
+    position?: [number, number];
   }) {
     const { clientId, ...rest } = data;
     const clients = this.server.sockets.connected;
