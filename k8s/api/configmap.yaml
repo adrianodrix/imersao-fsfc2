@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: simulator-conf
+  name: api-conf
 data:
   env: |
-    MONGO_DSN=mongodb+srv://devradardb:mETI9DZKt2QkWN13@devradardb.ttnlq.mongodb.net/imersao-fsfc2?authSource=admin&replicaSet=DevRadarDB-shard-0&w=majority&readPreference=primary&appname=imersao-fsfc2&retryWrites=true&ssl=true
+    MONGO_DSN=mongodb+srv://db001:db001@cluster0.rrlsr.mongodb.net/imersao-fsfc2?retryWrites=true&w=majority
     KAFKA_CLIENT_ID=code-delivery
     KAFKA_BROKER=pkc-lzvrd.us-west4.gcp.confluent.cloud:9092
     KAFKA_CONSUMER_GROUP_ID=code-delivery
